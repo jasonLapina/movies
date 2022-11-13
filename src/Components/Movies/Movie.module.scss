@@ -1,0 +1,59 @@
+.movie {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  & > * {
+    transition: all 0.3s;
+  }
+  img {
+    height: 100%;
+    object-fit: fill;
+  }
+
+  &:hover {
+    img {
+      opacity: 0.8;
+    }
+    .btn--play {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+      visibility: visible;
+      cursor: pointer;
+    }
+    .overview {
+      transform: translateY(0);
+    }
+  }
+}
+
+.overview {
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+  background-color: rgba(255, 255, 255);
+  padding: 1rem 2rem;
+  width: 95%;
+  font-weight: bold;
+  transform: translateY(200%);
+  transition-delay: 0.1s;
+  cursor: pointer;
+}
+
+.btn--play {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  font-size: 6.4rem;
+  line-height: 0;
+  color: white;
+  padding: 2rem;
+  background-color: rgba(255, 0, 0, 0.6);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 2;
+  &:hover {
+    background-color: red;
+  }
+}
