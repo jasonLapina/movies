@@ -3,16 +3,18 @@
   align-items: center;
   justify-content: center;
   button {
-    margin-left: -3rem;
+    background-color: red;
+    margin-left: -5rem;
     line-height: 0;
     color: #666;
     font-size: 2.4rem;
-    border-radius: 50%;
+    cursor: pointer;
+    padding-left: 2rem;
   }
 }
 
 .search {
-  padding: 1rem;
+  padding: 1rem 4rem 1rem 1rem;
   border: none;
   border-radius: 1.6rem;
   width: 90%;

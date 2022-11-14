@@ -14,19 +14,20 @@ const Movies = () => {
       setMovies(data.results);
     };
     getMovies();
-  }, []);
+  }, [url]);
 
   return (
     <section>
       <div className={classes.movies}>
         {movies.map((movie, i) => {
-          const { title, overview, poster_path } = movie;
+          const { title, overview, poster_path, vote_average } = movie;
           return (
             <Movie
               key={i}
               title={title}
               overview={overview}
               img={poster_path}
+              rating={vote_average}
             />
           );
         })}
