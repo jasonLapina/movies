@@ -19,7 +19,7 @@ const Search = () => {
     <form onSubmit={submitHandler} className={classes.form} id='form'>
       <input
         className={classes.search}
-        placeholder='Search'
+        placeholder='Title'
         type='text'
         id='search'
         ref={searchRef}
