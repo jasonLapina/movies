@@ -30,7 +30,8 @@ const Movies = () => {
       {!isLoading && movies.length !== 0 && (
         <div className={classes.movies}>
           {movies.map((movie, i) => {
-            const { title, overview, poster_path, vote_average } = movie;
+            const { title, overview, poster_path, vote_average, vote_count } =
+              movie;
             return (
               <Movie
                 key={i}
@@ -38,6 +39,7 @@ const Movies = () => {
                 overview={overview}
                 img={poster_path}
                 rating={vote_average}
+                raters={vote_count}
               />
             );
           })}

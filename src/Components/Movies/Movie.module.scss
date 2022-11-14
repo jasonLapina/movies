@@ -23,12 +23,15 @@
     .overview {
       transform: translateY(0);
     }
+    .rating {
+      transform: translateX(0);
+    }
   }
 }
 
 .overview {
   position: absolute;
-  bottom: 10%;
+  bottom: 1%;
   left: 2%;
   background-color: rgba(255, 255, 255);
   padding: 1rem 2rem;
@@ -37,6 +40,16 @@
   transform: translateY(200%);
   transition-delay: 0.1s;
   cursor: pointer;
+  border-radius: 1rem;
+}
+
+.full-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 2.4rem;
+  text-align: center;
 }
 
 .btn--play {
@@ -56,4 +69,32 @@
   &:hover {
     background-color: red;
   }
+}
+
+.rating {
+  z-index: 2;
+  padding: 0 2rem;
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  right: 1%;
+  top: 1%;
+
+  transition: all 0.3s;
+  transition-delay: 0.1s;
+  transform: translateX(200%);
+  .raters {
+    color: white;
+  }
+}
+
+.low-rating {
+  color: orangered;
+}
+.mid-rating {
+  color: yellow;
+}
+
+.high-rating {
+  color: greenyellow;
 }
