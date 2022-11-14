@@ -17,7 +17,7 @@ const Movie = (props) => {
         <ion-icon name='play-sharp'></ion-icon>
       </a>
       <img
-        src={`https://image.tmdb.org/t/p/w500/${props.img}`}
+        src={`https://image.tmdb.org/t/p/w500${props.img}`}
         alt='movie thumbnail'
       />
       <p className={classes.overview}>{`${overview}`}</p>

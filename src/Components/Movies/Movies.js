@@ -11,6 +11,7 @@ const Movies = () => {
     const getMovies = async () => {
       const res = await fetch(url);
       const data = await res.json();
+      console.log(data);
       setMovies(data.results);
     };
     getMovies();
@@ -18,6 +19,7 @@ const Movies = () => {
 
   return (
     <section>
+      {movies.length === 0 && <h1 className={classes.none}>NO MOVIES FOUND</h1>}
       <div className={classes.movies}>
         {movies.map((movie, i) => {
           const { title, overview, poster_path, vote_average } = movie;
