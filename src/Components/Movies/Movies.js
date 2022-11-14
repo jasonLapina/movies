@@ -1,20 +1,21 @@
-import { useEffect, useState } from 'react';
 import Movie from './Movie';
 import classes from './Movies.module.scss';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
+  const url = useSelector((state) => state.url);
+
   useEffect(() => {
-    const fetchMovies = async () => {
-      const res = await fetch(
-        'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b294078ac9e5deee42e81781ed53a00c&page=1'
-      );
+    const getMovies = async () => {
+      const res = await fetch(url);
       const data = await res.json();
-      const movies = data.results;
-      setMovies(movies);
+      setMovies(data.results);
     };
-    fetchMovies();
+    getMovies();
   }, []);
+
   return (
     <section>
       <div className={classes.movies}>
