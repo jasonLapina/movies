@@ -8,9 +8,14 @@ const Movie = (props) => {
 
   return (
     <div className={classes.movie}>
-      <div className={classes['btn--play']}>
+      <a
+        className={classes['btn--play']}
+        href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
         <ion-icon name='play-sharp'></ion-icon>
-      </div>
+      </a>
       <img
         src={`https://image.tmdb.org/t/p/w500/${props.img}`}
         alt='movie thumbnail'

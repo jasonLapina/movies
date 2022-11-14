@@ -4,7 +4,7 @@ import Header from './Components/Header/Header';
 function App() {
   return (
     <Fragment>
-      {/* <Header /> */}
+      <Header />
       <main>
         <Movies />
       </main>

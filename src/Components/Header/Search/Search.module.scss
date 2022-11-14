@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    margin-left: -3rem;
+    line-height: 0;
+    color: #666;
+    font-size: 2.4rem;
+    border-radius: 50%;
+  }
+}
+
+.search {
+  padding: 1rem;
+  border: none;
+  border-radius: 1.6rem;
+  width: 90%;
+  font-family: inherit;
+  transition: width 0.3s;
+  position: relative;
+  &:focus {
+    width: 100%;
+  }
+  &:focus + button {
+    color: #333;
+  }
+}

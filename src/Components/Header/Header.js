@@ -1,8 +1,9 @@
-import Search from '../UI/Search';
-
+import Filter from './Filter/Filter';
+import Search from './Search/Search';
+import classes from './Header.module.scss';
 const Header = () => {
   return (
-    <header>
+    <header className={classes.header}>
       <Search />
     </header>
   );

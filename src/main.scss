@@ -1,9 +1,18 @@
+:root {
+  --color-primary: #d90429;
+  --color-secondary: #0a0908;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: none;
+}
+*:focus {
+  outline: none;
 }
 
 html,
@@ -43,6 +52,7 @@ button,
 textarea,
 select {
   font: inherit;
+  color: inherit;
 }
 
 ion-icon {
