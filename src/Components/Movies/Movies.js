@@ -1,4 +1,4 @@
-import Movie from './Movie';
+import Movie from './Movie/Movie';
 import classes from './Movies.module.scss';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';

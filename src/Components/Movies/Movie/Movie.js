@@ -1,30 +1,33 @@
 import { useState } from 'react';
 import classes from './Movie.module.scss';
-import Modal from '../UI/Modal';
+import Modal from '../../UI/Modal';
+import Details from './Details/Details';
 
 const Movie = (props) => {
   const [maxChar, setMaxChar] = useState(150);
   const [showModal, setShowModal] = useState(false);
+  // CUTTING OVERVIEW CHARACTER LENGTH BY maxChar//
   let overview = props.overview.slice(0, maxChar);
   if (overview[overview.length - 1] !== '.') {
     overview = `${props.overview.slice(0, maxChar)}...`;
   }
-
+  ///////////////////////////////////////////////////////
   const rating = `${props.rating * 10}%`;
+  // ROUNDING OFF RATERS //
   const multiplier = String(props.raters).length - 1;
   const raters =
     props.raters > 100
       ? `${Number(String(props.raters)[0]) * 10 ** multiplier}+`
       : props.raters;
-
+  ///////////////////////////////////////
   let ratingStyle;
-  if (props.rating >= 8) {
+  if (props.rating >= 7.5) {
     ratingStyle = classes['high-rating'];
   }
-  if (props.rating > 4 && props.rating < 8) {
+  if (props.rating > 5.4 && props.rating < 7.5) {
     ratingStyle = classes['mid-rating'];
   }
-  if (props.rating <= 4) {
+  if (props.rating <= 5.4) {
     ratingStyle = classes['low-rating'];
   }
 
@@ -36,17 +39,13 @@ const Movie = (props) => {
             setShowModal(false);
           }}
         >
-          <div className={classes['full-overview']}>
-            <h1>{props.title}</h1>
-            <p>{props.overview}</p>
-            <p>
-              Rating:{' '}
-              <span className={`${classes['rating--modal']} ${ratingStyle}`}>
-                {props.rating}
-              </span>{' '}
-              (<span>{props.raters}</span>)
-            </p>
-          </div>
+          <Details
+            title={props.title}
+            overview={props.overview}
+            rating={props.rating}
+            ratingStyle={ratingStyle}
+            raters={props.raters}
+          />
         </Modal>
       )}
       <span className={`${classes.rating} ${ratingStyle}`}>
