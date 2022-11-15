@@ -12,6 +12,7 @@ const Header = () => {
   const randomizeHandler = () => {
     dispatch(movieActions.randomize());
   };
+
   return (
     <header className={classes.header}>
       <button className={classes.filter} onClick={popularHandler}>

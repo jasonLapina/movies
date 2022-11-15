@@ -9,6 +9,7 @@ const Search = () => {
   const searchRef = useRef();
   const submitHandler = (e) => {
     e.preventDefault();
+    if (searchValue.trim().length === 0) return;
     dispatch(movieActions.search(searchValue));
   };
   const changeHandler = () => {
