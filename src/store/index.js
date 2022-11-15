@@ -1,18 +1,26 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  url: `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b294078ac9e5deee42e81781ed53a00c&page=1`,
+  url: '/discover/movie?sort_by=popularity.desc',
+  page: 1,
 };
 
 const movieSlice = createSlice({
   name: 'movies',
   initialState,
   reducers: {
-    randomize(state) {},
+    getInitMovies(state) {
+      state.url = '/discover/movie?sort_by=popularity.desc';
+      state.page = 1;
+    },
+    randomize(state) {
+      state.url = '/discover/movie?sort_by=popularity.desc';
+      state.page = Math.floor(Math.random() * 100) + 1;
+    },
     sort(state, action) {},
     changePage(state, action) {},
     search(state, action) {
-      state.url = `https://api.themoviedb.org/3/search/movie?&api_key=b294078ac9e5deee42e81781ed53a00c&query=${action.payload}`;
+      state.url = `/search/movie?&query=${action.payload}`;
     },
   },
 });

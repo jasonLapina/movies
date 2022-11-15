@@ -16,8 +16,8 @@ const Movie = (props) => {
   // ROUNDING OFF RATERS //
   const multiplier = String(props.raters).length - 1;
   const raters =
-    props.raters > 100
-      ? `${Number(String(props.raters)[0]) * 10 ** multiplier}+`
+    props.raters > 1000
+      ? `${(props.raters / 1000).toFixed(0, 2)}k+`
       : props.raters;
   ///////////////////////////////////////
   let ratingStyle;

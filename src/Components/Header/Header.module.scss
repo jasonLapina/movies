@@ -4,3 +4,14 @@
   background-color: #444;
   padding: 2rem 0;
 }
+
+.filter {
+  padding: 0 2rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+}

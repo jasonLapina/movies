@@ -7,18 +7,21 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const url = useSelector((state) => state.url);
+  const page = useSelector((state) => state.page);
 
   useEffect(() => {
     const getMovies = async () => {
       setIsLoading(true);
-      const res = await fetch(url);
+      const res = await fetch(
+        `https://api.themoviedb.org/3${url}&api_key=b294078ac9e5deee42e81781ed53a00c&page=${page}`
+      );
       const data = await res.json();
       console.log(data);
       setMovies(data.results);
       setIsLoading(false);
     };
     getMovies();
-  }, [url]);
+  }, [url, page]);
 
   return (
     <section>
