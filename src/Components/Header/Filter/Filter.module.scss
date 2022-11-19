@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  button {
+    padding: 1rem;
+    transition: all 0.3s;
+    height: 100%;
+    &:hover {
+      background-color: red;
+      color: white;
+    }
+  }
+}
+
+.btn-grp {
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 7fr 3fr;
+  background-color: #f0f0f0;
+  font-size: 2rem;
+  border-radius: 1rem;
+}
+
+.popular {
+  text-align: left;
+}
+
+.drop {
+  line-height: 0;
+  height: 100%;
+  &:hover {
+    background-color: black;
+  }
+}
+
+.genres {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  opacity: 0.8;
+  & > * {
+    width: 100%;
+  }
+}

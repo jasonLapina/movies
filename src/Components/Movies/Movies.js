@@ -16,7 +16,6 @@ const Movies = () => {
         `https://api.themoviedb.org/3${url}&api_key=b294078ac9e5deee42e81781ed53a00c&page=${page}`
       );
       const data = await res.json();
-      console.log(data);
       setMovies(data.results);
       setIsLoading(false);
     };

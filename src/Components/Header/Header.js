@@ -15,12 +15,13 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <button className={classes.filter} onClick={popularHandler}>
-        Popular
-      </button>
+      <a href='/'>
+        <button className={classes.filter}>Back to top</button>
+      </a>
+      <Filter />
       <Search />
       <button onClick={randomizeHandler} className={classes.filter}>
-        Randomize Movies
+        Randomize
       </button>
     </header>
   );

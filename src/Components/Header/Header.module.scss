@@ -1,12 +1,16 @@
 .header {
   display: flex;
   justify-content: space-around;
-  background-color: #444;
+  background-color: rgba(68, 68, 68, 0.7);
+  align-items: center;
   padding: 2rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
 }
 
 .filter {
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   font-size: 2rem;
   border-radius: 1rem;
   transition: all 0.3s;
