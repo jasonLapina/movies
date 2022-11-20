@@ -48,8 +48,8 @@ const Movies = () => {
           })}
         </div>
       )}
-
-      <Pagination pages={movies.length} curPage={page} />
+      {/* 
+      <Pagination pages={movies.length} curPage={page} /> */}
     </section>
   );
 };
