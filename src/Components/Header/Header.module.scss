@@ -1,11 +1,13 @@
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, max-content) 0.5fr min-content;
   justify-content: space-around;
-  background-color: rgba(68, 68, 68, 0.7);
   align-items: center;
-  padding: 2rem 0;
+  background-color: rgba(68, 68, 68, 0.7);
+  padding: 2rem 4rem;
   position: fixed;
   width: 100%;
+  top: 0;
   z-index: 5;
 }
 

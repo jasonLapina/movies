@@ -6,9 +6,6 @@ import { movieActions } from '../../store';
 
 const Header = () => {
   const dispatch = useDispatch();
-  const popularHandler = () => {
-    dispatch(movieActions.getInitMovies());
-  };
   const randomizeHandler = () => {
     dispatch(movieActions.randomize());
   };
@@ -16,7 +13,7 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <a href='/'>
-        <button className={classes.filter}>Back to top</button>
+        <button className={classes.filter}>Popular</button>
       </a>
       <Filter />
       <Search />

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { movieActions } from '../../../store';
 import classes from './Filter.module.scss';
 const Filter = () => {
+  const [curGenre, setCurGenre] = useState('Genre');
   const [genres, setGenres] = useState([]);
   const [showGenres, setShowGenres] = useState(false);
   const dispatch = useDispatch();
@@ -20,13 +21,16 @@ const Filter = () => {
   }, []);
 
   const filterHandler = (genre) => {
-    dispatch(movieActions.filter(genre));
+    dispatch(movieActions.filter(genre.id));
+    setCurGenre(genre.name);
+    console.log(curGenre);
+    setShowGenres(false);
   };
 
   return (
     <div className={classes.container}>
       <div className={classes['btn-grp']}>
-        <button className={classes.popular}>Popular</button>
+        <span className={classes.curGenre}>{curGenre}</span>
         <button
           onClick={() => {
             setShowGenres((prev) => !prev);
@@ -42,7 +46,7 @@ const Filter = () => {
             return (
               <button
                 onClick={() => {
-                  filterHandler(genre.id);
+                  filterHandler(genre);
                 }}
                 key={i}
               >

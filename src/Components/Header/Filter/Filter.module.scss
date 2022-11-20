@@ -1,13 +1,11 @@
 .container {
   position: relative;
-  button {
+  button,
+  span {
     padding: 1rem;
-    transition: all 0.3s;
-    height: 100%;
-    &:hover {
-      background-color: red;
-      color: white;
-    }
+  }
+  span {
+    pointer-events: none;
   }
 }
 
@@ -15,21 +13,24 @@
   overflow: hidden;
   display: grid;
   align-items: center;
-  grid-template-columns: 7fr 3fr;
+  grid-template-columns: 1fr 3rem;
   background-color: #f0f0f0;
   font-size: 2rem;
   border-radius: 1rem;
-}
-
-.popular {
-  text-align: left;
+  min-width: 12rem;
 }
 
 .drop {
   line-height: 0;
   height: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  transition: all 0.3s;
   &:hover {
     background-color: black;
+    background-color: red;
+    color: white;
   }
 }
 

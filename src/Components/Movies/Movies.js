@@ -2,6 +2,7 @@ import Movie from './Movie/Movie';
 import classes from './Movies.module.scss';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import Pagination from '../Pagination/Pagination';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -47,6 +48,8 @@ const Movies = () => {
           })}
         </div>
       )}
+
+      <Pagination pages={movies.length} curPage={page} />
     </section>
   );
 };
