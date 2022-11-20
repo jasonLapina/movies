@@ -18,10 +18,12 @@ const movieSlice = createSlice({
       state.url = '/discover/movie?sort_by=popularity.desc';
       state.page = Math.floor(Math.random() * 100) + 1;
     },
-    filter(state, action) {
+    filterGenre(state, action) {
       state.url = `/discover/movie?with_genres=${action.payload}`;
     },
-    showMore(state, action) {},
+    changePage(state, action) {
+      state.page = action.payload;
+    },
     search(state, action) {
       state.url = `/search/movie?&query=${action.payload}`;
     },

@@ -7,6 +7,7 @@ import Pagination from '../Pagination/Pagination';
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [totalPages, setTotalPages] = useState(1);
   const url = useSelector((state) => state.url);
   const page = useSelector((state) => state.page);
 
@@ -19,6 +20,7 @@ const Movies = () => {
       const data = await res.json();
       setMovies(data.results);
       setIsLoading(false);
+      setTotalPages(data.total_pages);
     };
     getMovies();
   }, [url, page]);
@@ -48,8 +50,10 @@ const Movies = () => {
           })}
         </div>
       )}
-      {/* 
-      <Pagination pages={movies.length} curPage={page} /> */}
+
+      {!isLoading && movies.length !== 0 && (
+        <Pagination pages={totalPages} curPage={page} />
+      )}
     </section>
   );
 };

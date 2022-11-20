@@ -21,7 +21,7 @@ const Filter = () => {
   }, []);
 
   const filterHandler = (genre) => {
-    dispatch(movieActions.filter(genre.id));
+    dispatch(movieActions.filterGenre(genre.id));
     setCurGenre(genre.name);
     console.log(curGenre);
     setShowGenres(false);
@@ -30,7 +30,9 @@ const Filter = () => {
   return (
     <div className={classes.container}>
       <div className={classes['btn-grp']}>
-        <span className={classes.curGenre}>{curGenre}</span>
+        <span id='genre' className={classes.curGenre}>
+          {curGenre}
+        </span>
         <button
           onClick={() => {
             setShowGenres((prev) => !prev);

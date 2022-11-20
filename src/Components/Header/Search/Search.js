@@ -11,6 +11,7 @@ const Search = () => {
     e.preventDefault();
     if (searchValue.trim().length === 0) return;
     dispatch(movieActions.search(searchValue));
+    document.getElementById('genre').innerHTML = 'Genre';
   };
   const changeHandler = () => {
     setSearchValue(searchRef.current.value);

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.btn {
+  padding: 1.2rem;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: all 0.3s;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  &--arrow {
+    line-height: 0;
+  }
+  &:hover {
+    background-color: red;
+  }
+}
