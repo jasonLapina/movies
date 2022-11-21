@@ -50,10 +50,9 @@ const Movies = () => {
           })}
         </div>
       )}
-
-      {!isLoading && movies.length !== 0 && (
-        <Pagination pages={totalPages} curPage={page} />
-      )}
+      <div className={`${classes.pages} ${!isLoading ? classes.active : ''} `}>
+        <Pagination curPage={page} pages={totalPages} />
+      </div>
     </section>
   );
 };

@@ -20,12 +20,15 @@ const movieSlice = createSlice({
     },
     filterGenre(state, action) {
       state.url = `/discover/movie?with_genres=${action.payload}`;
+      state.page = 1;
     },
     changePage(state, action) {
       state.page = action.payload;
+      console.log(state.url);
     },
     search(state, action) {
       state.url = `/search/movie?&query=${action.payload}`;
+      state.page = 1;
     },
   },
 });

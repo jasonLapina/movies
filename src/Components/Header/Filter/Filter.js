@@ -23,7 +23,6 @@ const Filter = () => {
   const filterHandler = (genre) => {
     dispatch(movieActions.filterGenre(genre.id));
     setCurGenre(genre.name);
-    console.log(curGenre);
     setShowGenres(false);
   };
 

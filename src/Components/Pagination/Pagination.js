@@ -6,7 +6,6 @@ const Pagination = ({ pages, curPage }) => {
   const [basePage, setBasePage] = useState(1);
   const fivePages = Array.from({ length: pages > 5 ? 5 : pages });
   const dispatch = useDispatch();
-
   const changePageHandler = (page) => {
     dispatch(movieActions.changePage(page));
   };
@@ -28,20 +27,23 @@ const Pagination = ({ pages, curPage }) => {
         </button>
       )}
 
-      {fivePages.map((page, i) => {
+      {fivePages.map((_, i) => {
+        const pageNumber = i + basePage;
         return (
           <button
             onClick={() => {
-              changePageHandler(i + 1);
+              changePageHandler(pageNumber);
             }}
-            className={classes.btn}
+            className={`${classes.btn} ${
+              curPage === i + basePage ? classes.active : ''
+            }`}
             key={i}
           >
-            {i + basePage}
+            {pageNumber}
           </button>
         );
       })}
-      {basePage !== pages && (
+      {basePage !== pages - 1 && (
         <button
           onClick={incrementHandler}
           className={`${classes.btn} ${classes['btn--arrow']} `}
